@@ -1,0 +1,7 @@
+syntax = "proto3";
+package com.lukianchenko.grpc;
+
+message HelloRequest {
+  string name = 1;
+}
+
