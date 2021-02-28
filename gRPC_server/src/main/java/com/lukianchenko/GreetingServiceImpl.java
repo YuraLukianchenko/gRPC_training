@@ -6,6 +6,7 @@ import com.lukianchenko.grpc.GreetingServiceGrpc;
 import io.grpc.stub.StreamObserver;
 
 public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImplBase {
+
     @Override
     public void greeting(Greating.HelloRequest request,
                          StreamObserver<Greating.HelloResponse> responseObserver) {
