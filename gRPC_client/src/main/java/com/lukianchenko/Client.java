@@ -12,24 +12,6 @@ public class Client {
 
   public static void main(String[] args) {
 
-//    ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8081")
-//        .usePlaintext().build();
-//
-//    GreetingServiceGrpc.GreetingServiceBlockingStub stub =
-//        GreetingServiceGrpc.newBlockingStub(channel);
-//
-//    HelloRequest request = HelloRequest.newBuilder()
-//        .setName("Yura")
-//        .build();
-//
-//    HelloResponse response = stub.greeting(request);
-//
-//    System.out.println(response);
-//
-//    channel.shutdownNow();
-
-
-//    //<This code for streaming>
     ManagedChannel streamChannel = ManagedChannelBuilder.forTarget("localhost:8082")
         .usePlaintext().build();
 
@@ -44,7 +26,6 @@ public class Client {
 
     while (streamResponse.hasNext())
       System.out.println(streamResponse.next());
-
 
     streamChannel.shutdownNow();
   }
