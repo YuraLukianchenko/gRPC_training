@@ -1,9 +1,7 @@
 package com.lukianchenko;
 
 import com.lukianchenko.grpc.Greating;
-import com.lukianchenko.grpc.Greating.HelloRequest;
 import com.lukianchenko.grpc.Greating.HelloResponse;
-import com.lukianchenko.grpc.GreetingServiceGrpc.GreetingServiceImplBase;
 import com.lukianchenko.grpc.GreetingStreamServiceGrpc.GreetingStreamServiceImplBase;
 import io.grpc.stub.StreamObserver;
 import java.text.SimpleDateFormat;

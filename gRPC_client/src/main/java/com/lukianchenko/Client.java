@@ -2,7 +2,6 @@ package com.lukianchenko;
 
 import com.lukianchenko.grpc.Greating.HelloRequest;
 import com.lukianchenko.grpc.Greating.HelloResponse;
-import com.lukianchenko.grpc.GreetingServiceGrpc;
 import com.lukianchenko.grpc.GreetingStreamServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
