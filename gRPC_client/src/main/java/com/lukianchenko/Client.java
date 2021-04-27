@@ -12,41 +12,23 @@ public class Client {
 
   public static void main(String[] args) {
 
-//    ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8081")
-//        .usePlaintext().build();
-//
-//    GreetingServiceGrpc.GreetingServiceBlockingStub stub =
-//        GreetingServiceGrpc.newBlockingStub(channel);
-//
-//    HelloRequest request = HelloRequest.newBuilder()
-//        .setName("Yura")
-//        .build();
-//
-//    HelloResponse response = stub.greeting(request);
-//
-//    System.out.println(response);
-//
-//    channel.shutdownNow();
-
-
-//    //<This code for streaming>
-    ManagedChannel streamChannel = ManagedChannelBuilder.forTarget("localhost:8082")
+    ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8081")
         .usePlaintext().build();
 
-    GreetingStreamServiceGrpc.GreetingStreamServiceBlockingStub streamStub =
-        GreetingStreamServiceGrpc.newBlockingStub(streamChannel);
+    GreetingServiceGrpc.GreetingServiceBlockingStub stub =
+        GreetingServiceGrpc.newBlockingStub(channel);
 
-    HelloRequest streamRequest = HelloRequest.newBuilder()
+    HelloRequest request = HelloRequest.newBuilder()
         .setName("Yura")
         .build();
 
-    Iterator<HelloResponse> streamResponse = streamStub.greetingStream(streamRequest);
+    HelloResponse response = stub.greeting(request);
 
-    while (streamResponse.hasNext())
-      System.out.println(streamResponse.next());
+    System.out.println(response);
+
+    channel.shutdownNow();
 
 
-    streamChannel.shutdownNow();
   }
 
 }
