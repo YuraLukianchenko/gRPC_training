@@ -25,7 +25,7 @@ public class GreetingStreamingService extends GreetingStreamServiceImplBase {
         System.out.println("thread was interrupted");
       }
       HelloResponse response = HelloResponse.newBuilder()
-          .setGreeting("hello from server, " + request.getName()
+          .setGreeting("hello from server, " + request.getName() + " "
               + formatter.format(new Date(System.currentTimeMillis()))).build();
 
       responseObserver.onNext(response);
